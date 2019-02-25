@@ -9,8 +9,7 @@
 ## Introduction
 
 Let's imagine we're in the job market. We're going to apply for a job and we're
-going to write a very simple text-based resume and store it in the file `my-
-resume-January-2017.txt`.
+going to write a very simple text-based resume and store it in the file `my-resume-January-2017.txt`.
 
 We apply for the job, and we get it (congratulations!). We leave that resume
 file with other downloaded cat GIFs, receipts, and emails on our desktop for a
