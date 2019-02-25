@@ -1,4 +1,4 @@
-# Git Version Control: Introduction to Version Control
+# Introduction to Version Control
 
 ## Learning Goals
 
