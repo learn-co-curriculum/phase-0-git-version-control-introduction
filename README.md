@@ -64,7 +64,7 @@ other benefits of managing your work with a VCS like Git:
   - Automatically create a backup of your work
   - Provide an easy way to undo mistakes and restore a previous verison of your work
   - Document changes, including a log of what's changed with messages explaining why it was changed
-  - Keep file names and hierachies consistent and organized
+  - Keep file names and hierarchies consistent and organized
   - Branch work off into copies that can be edited in different ways at the same time
   - Collaborate with others without disturbing each other's work
 
