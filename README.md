@@ -113,29 +113,29 @@ bad ideas** and _instantly_ get back to your last-known "good" state.
 Think about it this way: when you were learning arithmetic, you knew the way to
 undo a bad calculation was to turn the pencil upside down and erase. As a result,
 you were **free** to try, experiment, and explore, knowing you could always
-easily get back to the original starting point. When we were learning, most of us
+easily get back to the original starting point. Because of this, most of us
 did our math homework in pencil, not ink!
 
 Because of the **freedom** that VCS provides, we can be **unafraid** to look
-at an ugly bit of code and _try_ something new. We can take a new technique a 
-co-worker tellus about and we can _try_ to replace our old code with this new idea.
-We can read about a new feature provided in a framework and _try_ it out in our 
+at an ugly bit of code and _try_ something new. We can take a new technique a
+co-worker told us about and we can _try_ to replace our old code with this new idea.
+We can read about a new feature provided in a framework and _try_ it out in our
 old code. **VCS helps us be unafraid to try new and improved techniques**.
 
 > **ASIDE** The programmer, entrepreneur, and venture capitalist Paul Graham
 > notes that oil paints unlocked a revolution in experimentation in visual arts
-> because they were undo-able. Because of the **freedom** that oils provided, 
+> because they were undo-able. Because of the **freedom** that oils provided,
 > Italian Renaissance painters were able to create the revolutions in constructing
 > painting that made the leaps of the renaissance so important. Read more in his
 > essay ["Hackers and Painters."][hp]
 
 ## Identify Benefits of Version Control Systems
 
-Beyond the advantage of being able to safely experiement, there are several
+Beyond the advantage of being able to safely experiment, there are several
 _other_ benefits we get when we manage our work with Git:
 
   - Automatically create a backup of your work
-  - Provide an easy way to undo mistakes and restore a previous verison of your work
+  - Provide an easy way to undo mistakes and restore a previous version of your work
   - Document changes, including a log of what's changed with messages explaining why it was changed
   - Keep file names and hierarchies consistent and organized
   - Branch work off into multiple "sandboxes" that can be experimented with, but won't impact each other
@@ -182,7 +182,7 @@ work in practice—that part will come later.
 
 If we are afraid to edit our code we won't remove complicated code that's hard
 to work with, try awesome new libraries, or take chances with fun new features.
-Verson control helps us maintain the overall stability of our code so that we
+Version control helps us maintain the overall stability of our code so that we
 can feel free to explore.
 
 ## Resources
@@ -193,3 +193,4 @@ can feel free to explore.
 [about-version-control]: http://git-scm.com/book/en/Getting-Started-About-Version-Control
 [git-getstarted]: http://git-scm.com/video/what-is-git
 [hp]: http://www.paulgraham.com/hp.html
+[ISO8601]: https://en.wikipedia.org/wiki/ISO_8601
