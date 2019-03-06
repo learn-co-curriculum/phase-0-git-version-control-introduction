@@ -8,59 +8,102 @@
 
 ## Introduction
 
-Let's imagine we're in the job market. We're going to apply for a job and we're
-going to write a very simple text-based resume and store it in the file
-`my-resume-January-2017.txt`.
+Let's imagine a very stressful situation. Your manager comes to you and says:
 
-We apply for the job...and we get it! When we start working we forget about
-our resume and leave it, forgotten, on our Desktop 
-with downloaded cat GIFs, receipts, and emails.
-For the next three blissful, paid months, we don't think about our
-resume at all.
+> Hi there, we're looking to present a report to investors. If we get this
+> investment, we'll all be millionaires. If we don't get this investment, we're
+> going to have to close down the company. The key to success is going to be a
+> report that **you** are going to manage. Two things will make it stand out:
+>
+> 1. It must be absolutely correct: no errors, no typos, the math has to check
+>    out in every figure.
+> 2. It must have the most up-to-date information
+> 3. The investors will tolerate _slightly_ older data, if it means that we can
+>    be _sure_ the facts are correct.
+>
+> One last requirement is that for auditing purposes we need to be able to save
+> a unique version of all the versions of this report. We have to know what the
+> report looked like, for example, 3 days ago, or 3 weeks ago.
+>
+> Marge, Bob, and Amelia will all be doing research for you and contributing
+> new data as much as possible. You have to make sure that all the parts
+> integrate correctly. Thanks! And we're all counting on you!
 
-But when the three months are done, we are ready to find a new contract. We have
-some new skills that we'd like to add to our resume, but we don't want to lose
-our original resume from three months ago. We would like to create a new
-_version_ of the resume.
+How could you achieve these goals? Take a few minutes to imagine, or sketch out
+what your strategy might be.
 
-A _basic_ way of managing a new _version_ would be to copy `my-resume-
-January-2017.txt` to `my-resume-April-2017.txt` and create a new _version_. We
-could plan to create new _versions_ every time we need to apply for a new job **or**
-if we want to highlight different
-skills.
+## Naive Strategy
+
+A _naive_ way of managing _versions_ would be to start with a file called
+`investor-report-latest.txt`. You'd also copy that to
+`investor-report-master.txt`.
+
+You'd share `investor-report-latest.txt` with Marge, Bob, and Amelia.
+
+When they made a change to the report, you'd find the changes, verify them, and
+then update them into `investor-report-master.txt`.
+
+You'd make a copy of `investor-report-master.txt` and give it a date-stamp like
+`investor-report-2019-02-13T1017.txt` (here you've added an [ISO8601][]
+date-time label to the end of the file. This means when `ls` prints out the
+directory all the file names will be shown in ascending date order).
+
+You'd then overwrite `investor-report-latest.txt` with
+`investor-report-master.txt` and tell everyone to start working off of the
+newly updated `investor-report-latest.txt`.
 
 Before long, we might have a directory full of files like:
 
 ```bash
-my-resume-January-2017.txt
-my-resume-April-2017-full-stack.txt
-my-resume-April-2017-full-stack-JavaScript-focused.txt
-my-resume-April-2017-full-stack-JavaScript-focused-angular.txt
-my-resume-April-2017-full-stack-JavaScript-focused-react.txt
-my-resume-April-2017-full-back-end-ruby.txt
-
-my-resume-April-2017-full-stack.txt
-my-resume-April-2017-full-stack-JavaScript-focused.txt
-my-resume-April-2017-full-stack-JavaScript-focused-angular.txt
-my-resume-April-2017-full-stack-JavaScript-focused-react.txt
-my-resume-April-2017-full-stack-JavaScript-focused-react-hooks.txt
-my-resume-April-2017-full-stack-JavaScript-focused-vue.txt
-my-resume-April-2017-full-back-end-ruby.txt
-my-resume-April-2017-full-back-end-python.txt
+investor-report-2019-1-01T1017.txt
+investor-report-2019-1-02T1123.txt
+investor-report-2019-1-04T4340.txt
+investor-report-2019-1-05T1017.txt
+investor-report-2019-1-08T2217.txt
+investor-report-2019-2-08T2317.txt
+investor-report-2019-2-09T0017.txt
+investor-report-2019-2-10T914.txt
+investor-report-2019-2-13T1017.txt
+investor-report-2019-2-15T1127.txt
+investor-report-2019-2-20T1237.txt
+investor-report-2019-2-21T1330.txt
+investor-report-2019-2-22T1545.txt
+investor-report-latest.txt
+investor-report-master.txt
 ...
 ```
 
-Wow! What a mess! Multiple files is a good strategy for a _basic_ version
-strategy, but software developers generate many, many updates to many, many files.
-This strategy simply will not work. We need software to help.
+Wow! What a mess! And there are other messes waiting.
 
-The secret is to use a _version control system_. That is, software that
-_controls_ our collection of _versions_.
+What if Amelia and Marge both start work from the latest
+`investor-report-latest.txt` and Amelia makes changes to the same section Marge
+was working on. Amelia gets her work in first and that gets integrated by you.
+Now Marge's changes no longer apply. Marge is frustrated because her work will
+have to be re-done!
+
+## Reflection
+
+This is a pretty stressful bit of imagination. You've got to make sure that a
+report is as current as possible and absolutely, positively, correct. You might
+think this manager is a jerk or that these expectations are unreasonable. Maybe
+this could be possible with _one_ writer, not _four_.
+
+But the expectations that manager gave you for the report is ***the exact same
+expectation we have for code***. It should be as good as possible, absolutely
+correct, and ready to ship to users at a moments' notice.
+
+The great news is that _all_ the manual work you had to do (and so much more!)
+can be done by a type of software called a _version control system (VCS)_. That
+is, software that _controls_ our collection of _versions_. The most popular VCS
+is called "Git." When we have a VCS on our side we can work confidently; we can
+even experiment without fear. Getting back to a "last known good state" is just
+a few key-clicks away. You're going to love writing code, text, letters,
+knowing a VCS is on your side!
 
 ## Define the Purpose of a Version Control System
 
-"Version Control System (VCS)" describes a whole group of software. VCS software
-include Git, Mercurial, Subversion, and others. Some other web-based
+"Version Control System (VCS)" describes a whole group of software. VCS
+software include Git, Mercurial, Subversion, and others. Some other web-based
 applications like Google Docs have embraced the idea of "versions" and have
 added features like "tracked changes" or "view change history."
 
@@ -70,29 +113,29 @@ bad ideas** and _instantly_ get back to your last-known "good" state.
 Think about it this way: when you were learning arithmetic, you knew the way to
 undo a bad calculation was to turn the pencil upside down and erase. As a result,
 you were **free** to try, experiment, and explore, knowing you could always
-easily get back to the original starting point. When we were learning, most of us
+easily get back to the original starting point. Because of this, most of us
 did our math homework in pencil, not ink!
 
 Because of the **freedom** that VCS provides, we can be **unafraid** to look
-at an ugly bit of code and _try_ something new. We can take a new technique a 
-co-worker tellus about and we can _try_ to replace our old code with this new idea.
-We can read about a new feature provided in a framework and _try_ it out in our 
+at an ugly bit of code and _try_ something new. We can take a new technique a
+co-worker told us about and we can _try_ to replace our old code with this new idea.
+We can read about a new feature provided in a framework and _try_ it out in our
 old code. **VCS helps us be unafraid to try new and improved techniques**.
 
 > **ASIDE** The programmer, entrepreneur, and venture capitalist Paul Graham
 > notes that oil paints unlocked a revolution in experimentation in visual arts
-> because they were undo-able. Because of the **freedom** that oils provided, 
+> because they were undo-able. Because of the **freedom** that oils provided,
 > Italian Renaissance painters were able to create the revolutions in constructing
 > painting that made the leaps of the renaissance so important. Read more in his
 > essay ["Hackers and Painters."][hp]
 
 ## Identify Benefits of Version Control Systems
 
-Beyond the advantage of being able to safely experiement, there are several
+Beyond the advantage of being able to safely experiment, there are several
 _other_ benefits we get when we manage our work with Git:
 
   - Automatically create a backup of your work
-  - Provide an easy way to undo mistakes and restore a previous verison of your work
+  - Provide an easy way to undo mistakes and restore a previous version of your work
   - Document changes, including a log of what's changed with messages explaining why it was changed
   - Keep file names and hierarchies consistent and organized
   - Branch work off into multiple "sandboxes" that can be experimented with, but won't impact each other
@@ -139,7 +182,7 @@ work in practice—that part will come later.
 
 If we are afraid to edit our code we won't remove complicated code that's hard
 to work with, try awesome new libraries, or take chances with fun new features.
-Verson control helps us maintain the overall stability of our code so that we
+Version control helps us maintain the overall stability of our code so that we
 can feel free to explore.
 
 ## Resources
@@ -150,3 +193,4 @@ can feel free to explore.
 [about-version-control]: http://git-scm.com/book/en/Getting-Started-About-Version-Control
 [git-getstarted]: http://git-scm.com/video/what-is-git
 [hp]: http://www.paulgraham.com/hp.html
+[ISO8601]: https://en.wikipedia.org/wiki/ISO_8601
