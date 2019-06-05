@@ -143,7 +143,7 @@ _other_ benefits we get when we manage our work with Git:
 
 And beyond these are even more advanced features that will help you optimize
 your workflow, once you master the basics. If that feels daunting, it's OK. Most
-people learn a few patterns of Git and never lean more until they absolutely
+people learn a few patterns of Git and never learn more until they absolutely
 have to. Over years they build up a rich set of techniques, but it's rare to find
 someone who knows **everything** about Git. You don't need to memorize every command
 and optional flag to get some of its best benefits.
