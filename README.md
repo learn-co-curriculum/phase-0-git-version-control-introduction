@@ -13,12 +13,12 @@ Let's imagine a very stressful situation. Your manager comes to you and says:
 > Hi there, we're looking to present a report to investors. If we get this
 > investment, we'll all be millionaires. If we don't get this investment, we're
 > going to have to close down the company. The key to success is going to be a
-> report that **you** are going to manage. Two things will make it stand out:
+> report that **you** are going to manage. Three things will make it stand out:
 >
 > 1. It must be absolutely correct: no errors, no typos, the math has to check
 >    out in every figure.
 > 2. It must have the most up-to-date information
-> 3. The investors will tolerate _slightly_ older data, if it means that we can
+> 3. The investors will tolerate _slightly_ older data if it means that we can
 >    be _sure_ the facts are correct.
 >
 > One last requirement is that for auditing purposes we need to be able to save
@@ -88,8 +88,8 @@ report is as current as possible and absolutely, positively, correct. You might
 think this manager is a jerk or that these expectations are unreasonable. Maybe
 this could be possible with _one_ writer, not _four_.
 
-But the expectations that manager gave you for the report is ***the exact same
-expectation we have for code***. It should be as good as possible, absolutely
+But the expectations that manager gave you for the report are ***the exact same
+expectations we have for code***. It should be as good as possible, absolutely
 correct, and ready to ship to users at a moments' notice.
 
 The great news is that _all_ the manual work you had to do (and so much more!)
@@ -103,7 +103,7 @@ knowing a VCS is on your side!
 ## Define the Purpose of a Version Control System
 
 "Version Control System (VCS)" describes a whole group of software. VCS
-software include Git, Mercurial, Subversion, and others. Some other web-based
+software includes Git, Mercurial, Subversion, and others. Some other web-based
 applications like Google Docs have embraced the idea of "versions" and have
 added features like "tracked changes" or "view change history."
 
@@ -124,10 +124,14 @@ old code. **VCS helps us be unafraid to try new and improved techniques**.
 
 > **ASIDE** The programmer, entrepreneur, and venture capitalist Paul Graham
 > notes that oil paints unlocked a revolution in experimentation in visual arts
-> because they were undo-able. Because of the **freedom** that oils provided,
-> Italian Renaissance painters were able to create the revolutions in constructing
-> painting that made the leaps of the renaissance so important. Read more in his
-> essay ["Hackers and Painters."][hp]
+> because they were undo-able. Oils provided the **freedom** to err and recover
+> that other paint media did not provide (e.g. watercolor). Because of this
+> **freedom** these painters were free to explore perspective, light, and
+> composition in completely new ways. Because of their _tools_ they had more
+> _freedom_ and were able to make their burst of exploration a _movement_: The
+> Renaissance.  
+> 
+> Read more in his essay ["Hackers and Painters."][hp]
 
 ## Identify Benefits of Version Control Systems
 
@@ -138,7 +142,7 @@ _other_ benefits we get when we manage our work with Git:
   - Provide an easy way to undo mistakes and restore a previous version of your work
   - Document changes, including a log of what's changed with messages explaining why it was changed
   - Keep file names and hierarchies consistent and organized
-  - Branch work off into multiple "sandboxes" that can be experimented with, but won't impact each other
+  - Branch work off into multiple "sandboxes" that can be experimented with but won't impact each other
   - Collaborate with others without disturbing each other's or our own work
 
 And beyond these are even more advanced features that will help you optimize
@@ -161,9 +165,9 @@ work in practice—that part will come later.
   changes to that file. We call these changes "differences" or "diffs". Git will
   allow you to choose whether to _add_ the change, or "diff," in order to keep it
 - **diff**: Short for "difference," the "diff" of a file is all the changes that
-  happened in it since the last _commit_. The "diff" of a repo are all the diffs
+  happened in it since the last _commit_. The "diff" of a repo is all the diffs
   in all the _tracked_ files in the _repo_ that have been made, but which have not
-  yet been _committed_.
+  yet been _committed_ (sometimes programmers call this "the diffset").
 - **commit**: When a diff is decided to be a good thing to save, we _commit_ the
   diff to the repo's history using the `commit` command. When we make a commit we
   are asked to write a "log" message which describes what happened in the diff.
