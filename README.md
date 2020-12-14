@@ -25,7 +25,7 @@ Let's imagine a very stressful situation. Your manager comes to you and says:
 > a unique version of all the versions of this report. We have to know what the
 > report looked like, for example, 3 days ago, or 3 weeks ago.
 >
-> Marge, Bob, and Amelia will all be doing research for you and contributing
+> Suman, Nibaal, and Taylor will all be doing research for you and contributing
 > new data as much as possible. You have to make sure that all the parts
 > integrate correctly. Thanks! And we're all counting on you!
 
@@ -38,7 +38,7 @@ A _naive_ way of managing _versions_ would be to start with a file called
 `investor-report-latest.txt`. You'd also copy that to
 `investor-report-master.txt`.
 
-You'd share `investor-report-latest.txt` with Marge, Bob, and Amelia.
+You'd share `investor-report-latest.txt` with Suman, Nibaal, and Taylor.
 
 When they made a change to the report, you'd find the changes, verify them, and
 then update them into `investor-report-master.txt`.
