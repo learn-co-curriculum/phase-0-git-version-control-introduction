@@ -75,10 +75,10 @@ investor-report-master.txt
 
 Wow! What a mess! And there are other messes waiting.
 
-What if Amelia and Marge both start work from the latest
-`investor-report-latest.txt` and Amelia makes changes to the same section Marge
-was working on. Amelia gets her work in first and that gets integrated by you.
-Now Marge's changes no longer apply. Marge is frustrated because her work will
+What if Suman and Taylor both start work from the latest
+`investor-report-latest.txt` and Taylor makes changes to the same section Suman
+was working on. Taylor gets their work in first and that gets integrated by you.
+Now Suman's changes no longer apply. Suman is frustrated because their work will
 have to be re-done!
 
 ## Reflection
