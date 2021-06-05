@@ -44,7 +44,7 @@ When they made a change to the report, you'd find the changes, verify them, and
 then update them into `investor-report-master.txt`.
 
 You'd make a copy of `investor-report-master.txt` and give it a date-stamp like
-`investor-report-2019-02-13T1017.txt` (here you've added an [ISO8601][]
+`investor-report-2019-02-13T1017.txt` (here you've added an [ISO8601][iso8601]
 date-time label to the end of the file. This means when `ls` prints out the
 directory all the file names will be shown in ascending date order).
 
@@ -88,8 +88,8 @@ report is as current as possible and absolutely, positively, correct. You might
 think this manager is a jerk or that these expectations are unreasonable. Maybe
 this could be possible with _one_ writer, not _four_.
 
-But the expectations that manager gave you for the report are ***the exact same
-expectations we have for code***. It should be as good as possible, absolutely
+But the expectations that manager gave you for the report are **_the exact same
+expectations we have for code_**. It should be as good as possible, absolutely
 correct, and ready to ship to users at a moments' notice.
 
 The great news is that _all_ the manual work you had to do (and so much more!)
@@ -129,8 +129,8 @@ old code. **VCS helps us be unafraid to try new and improved techniques**.
 > **freedom** these painters were free to explore perspective, light, and
 > composition in completely new ways. Because of their _tools_ they had more
 > _freedom_ and were able to make their burst of exploration a _movement_: The
-> Renaissance.  
-> 
+> Renaissance.
+>
 > Read more in his essay ["Hackers and Painters."][hp]
 
 ## Identify Benefits of Version Control Systems
@@ -138,12 +138,12 @@ old code. **VCS helps us be unafraid to try new and improved techniques**.
 Beyond the advantage of being able to safely experiment, there are several
 _other_ benefits we get when we manage our work with Git:
 
-  - Automatically create a backup of your work
-  - Provide an easy way to undo mistakes and restore a previous version of your work
-  - Document changes, including a log of what's changed with messages explaining why it was changed
-  - Keep file names and hierarchies consistent and organized
-  - Branch work off into multiple "sandboxes" that can be experimented with but won't impact each other
-  - Collaborate with others without disturbing each other's or our own work
+- Automatically create a backup of your work
+- Provide an easy way to undo mistakes and restore a previous version of your work
+- Document changes, including a log of what's changed with messages explaining why it was changed
+- Keep file names and hierarchies consistent and organized
+- Branch work off into multiple "sandboxes" that can be experimented with but won't impact each other
+- Collaborate with others without disturbing each other's or our own work
 
 And beyond these are even more advanced features that will help you optimize
 your workflow, once you master the basics. If that feels daunting, it's OK. Most
@@ -163,24 +163,28 @@ work in practice—that part will come later.
   Git.
 - **track**: When a file is _tracked_ by Git, it means that Git will notice any
   changes to that file. We call these changes "differences" or "diffs". Git will
-  allow you to choose whether to _add_ the change, or "diff," in order to keep it
+  allow you to choose whether to _add_ the change, or "diff," in order to keep
+  it
 - **diff**: Short for "difference," the "diff" of a file is all the changes that
   happened in it since the last _commit_. The "diff" of a repo is all the diffs
-  in all the _tracked_ files in the _repo_ that have been made, but which have not
-  yet been _committed_ (sometimes programmers call this "the diffset").
+  in all the _tracked_ files in the _repo_ that have been made, but which have
+  not yet been _committed_ (sometimes programmers call this "the diffset").
 - **commit**: When a diff is decided to be a good thing to save, we _commit_ the
-  diff to the repo's history using the `commit` command. When we make a commit we
-  are asked to write a "log" message which describes what happened in the diff.
-  Each commit also knows when it happened and what the repo's "diff" was.
+  diff to the repo's history using the `commit` command. When we make a commit
+  we are asked to write a "log" message which describes what happened in the
+  diff. Each commit also knows when it happened and what the repo's "diff" was.
 - **log**: The record of what happened in each commit
 - **local/remote**: When we start working with a git repo, we "clone" it from a
   _remote_ source and have a copy of that directory on our own system. We call
   the repo on our personal system the _local_ repo. (We'll talk more about the
   "clone" command later.)
-- **`master` branch**: You'll learn in advanced Git that a repo can support multiple
-  branches (we called those "sandboxes" earlier). For the moment, just remember this:
-  by default, when you create a Git repo, you will be working on the `master` branch.
-- **branch**: The combined history of all the changes of all the files in the repo.
+- **default branch**: You'll learn in advanced Git that a repo can support
+  multiple branches (we called those "sandboxes" earlier). For the moment, just
+  remember this: by default, when you create a Git repo, you will be working on
+  the default branch. The name of this branch may be either `main` or `master`,
+  depending on your configuration.
+- **branch**: The combined history of all the changes of all the files in the
+  repo.
 
 ## Conclusion
 
@@ -191,10 +195,10 @@ can feel free to explore.
 
 ## Resources
 
-* [Getting Started - About Version Control][about-version-control]
-* [Git Basics - What is Git?][git-getstarted]
+- [Getting Started - About Version Control][about-version-control]
+- [Git Basics - What is Git?][git-get-started]
 
 [about-version-control]: http://git-scm.com/book/en/Getting-Started-About-Version-Control
-[git-getstarted]: http://git-scm.com/video/what-is-git
+[git-get-started]: http://git-scm.com/video/what-is-git
 [hp]: http://www.paulgraham.com/hp.html
-[ISO8601]: https://en.wikipedia.org/wiki/ISO_8601
+[iso8601]: https://en.wikipedia.org/wiki/ISO_8601
