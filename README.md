@@ -1,4 +1,4 @@
-# Introduction to Version Control
+# Intro to Version Control
 
 ## Learning Goals
 
