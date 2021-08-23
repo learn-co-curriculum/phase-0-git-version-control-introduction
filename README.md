@@ -54,7 +54,7 @@ newly updated `investor-report-latest.txt`.
 
 Before long, we might have a directory full of files like:
 
-```bash
+```console
 investor-report-2019-1-01T1017.txt
 investor-report-2019-1-02T1123.txt
 investor-report-2019-1-04T4340.txt
