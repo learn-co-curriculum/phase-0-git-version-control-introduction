@@ -36,20 +36,20 @@ what your strategy might be.
 
 A _naive_ way of managing _versions_ would be to start with a file called
 `investor-report-latest.txt`. You'd also copy that to
-`investor-report-master.txt`.
+`investor-report-main.txt`.
 
 You'd share `investor-report-latest.txt` with Suman, Nibaal, and Taylor.
 
 When they made a change to the report, you'd find the changes, verify them, and
-then update them into `investor-report-master.txt`.
+then update them into `investor-report-main.txt`.
 
-You'd make a copy of `investor-report-master.txt` and give it a date-stamp like
+You'd make a copy of `investor-report-main.txt` and give it a date-stamp like
 `investor-report-2019-02-13T1017.txt` (here you've added an [ISO8601][iso8601]
 date-time label to the end of the file. This means when `ls` prints out the
 directory all the file names will be shown in ascending date order).
 
 You'd then overwrite `investor-report-latest.txt` with
-`investor-report-master.txt` and tell everyone to start working off of the
+`investor-report-main.txt` and tell everyone to start working off of the
 newly updated `investor-report-latest.txt`.
 
 Before long, we might have a directory full of files like:
@@ -69,7 +69,7 @@ investor-report-2019-2-20T1237.txt
 investor-report-2019-2-21T1330.txt
 investor-report-2019-2-22T1545.txt
 investor-report-latest.txt
-investor-report-master.txt
+investor-report-main.txt
 ...
 ```
 
@@ -140,17 +140,19 @@ _other_ benefits we get when we manage our work with Git:
 
 - Automatically create a backup of your work
 - Provide an easy way to undo mistakes and restore a previous version of your work
-- Document changes, including a log of what's changed with messages explaining why it was changed
+- Document changes, including a log of what's changed with messages explaining
+  why it was changed
 - Keep file names and hierarchies consistent and organized
-- Branch work off into multiple "sandboxes" that can be experimented with but won't impact each other
+- Branch work off into multiple "sandboxes" that can be experimented with but
+  won't impact each other
 - Collaborate with others without disturbing each other's or our own work
 
 And beyond these are even more advanced features that will help you optimize
-your workflow, once you master the basics. If that feels daunting, it's OK. Most
-people learn a few patterns of Git and never learn more until they absolutely
-have to. Over years they build up a rich set of techniques, but it's rare to find
-someone who knows **everything** about Git. You don't need to memorize every command
-and optional flag to get some of its best benefits.
+your workflow, once you become a whiz with the basics. If that feels daunting,
+it's OK. Most people learn a few patterns of Git and never learn more until they
+absolutely have to. Over years they build up a rich set of techniques, but it's
+rare to find someone who knows **everything** about Git. You don't need to
+memorize every command and optional flag to get some of its best benefits.
 
 ## Recognize Useful Git Vocabulary Terms
 
@@ -181,8 +183,8 @@ work in practice—that part will come later.
 - **default branch**: You'll learn in advanced Git that a repo can support
   multiple branches (we called those "sandboxes" earlier). For the moment, just
   remember this: by default, when you create a Git repo, you will be working on
-  the default branch. The name of this branch may be either `main` or `master`,
-  depending on your configuration.
+  the default branch. The name of this branch should be `main` (but may default
+  to `master`, depending on your configuration.)
 - **branch**: The combined history of all the changes of all the files in the
   repo.
 
