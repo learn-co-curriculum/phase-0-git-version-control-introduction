@@ -140,9 +140,11 @@ _other_ benefits we get when we manage our work with Git:
 
 - Automatically create a backup of your work
 - Provide an easy way to undo mistakes and restore a previous version of your work
-- Document changes, including a log of what's changed with messages explaining why it was changed
+- Document changes, including a log of what's changed with messages explaining
+  why it was changed
 - Keep file names and hierarchies consistent and organized
-- Branch work off into multiple "sandboxes" that can be experimented with but won't impact each other
+- Branch work off into multiple "sandboxes" that can be experimented with but
+  won't impact each other
 - Collaborate with others without disturbing each other's or our own work
 
 And beyond these are even more advanced features that will help you optimize
