@@ -8,119 +8,40 @@
 
 ## Introduction
 
-Let's imagine a very stressful situation. Your manager comes to you and says:
+Imagine you are part of a team of developers working on a popular web
+application with many features. Your app may have a large, complex code
+base which means that, at any given time, there are likely to be multiple
+projects going on and multiple developers working on different parts of the
+software.
 
-> Hi there, we're looking to present a report to investors. If we get this
-> investment, we'll all be millionaires. If we don't get this investment, we're
-> going to have to close down the company. The key to success is going to be a
-> report that **you** are going to manage. Three things will make it stand out:
->
-> 1. It must be absolutely correct: no errors, no typos, the math has to check
->    out in every figure.
-> 2. It must have the most up-to-date information
-> 3. The investors will tolerate _slightly_ older data if it means that we can
->    be _sure_ the facts are correct.
->
-> One last requirement is that for auditing purposes we need to be able to save
-> a unique version of all the versions of this report. We have to know what the
-> report looked like, for example, 3 days ago, or 3 weeks ago.
->
-> Suman, Nibaal, and Taylor will all be doing research for you and contributing
-> new data as much as possible. You have to make sure that all the parts
-> integrate correctly. Thanks! And we're all counting on you!
+This type of scenario is quite common, and can easily lead to problems:
 
-How could you achieve these goals? Take a few minutes to imagine, or sketch out
-what your strategy might be.
+- Imagine someone is working on a new feature, or incorporating a new technique,
+  or refactoring the code to make it more efficient and something they change
+  breaks the app. How can we "back up" to the most recent working version of the
+  code?
 
-## Naive Strategy
+- There could be some part of the application that overlaps with the work
+  being done by more than one developer. How can we ensure that no
+  inconsistencies or conflicts work their way into the code?
 
-A _naive_ way of managing _versions_ would be to start with a file called
-`investor-report-latest.txt`. You'd also copy that to
-`investor-report-main.txt`.
+- How can we maintain a record of the changes that are being made and why? Over
+  time, memories about how things have been done can fade, or new people may
+  join the team who don't have that background knowledge. This can lead to
+  inconsistencies in the code or to wasted time revisiting issues that have been
+  addressed in the past.
 
-You'd share `investor-report-latest.txt` with Suman, Nibaal, and Taylor.
-
-When they made a change to the report, you'd find the changes, verify them, and
-then update them into `investor-report-main.txt`.
-
-You'd make a copy of `investor-report-main.txt` and give it a date-stamp like
-`investor-report-2019-02-13T1017.txt` (here you've added an [ISO8601][iso8601]
-date-time label to the end of the file. This means when `ls` prints out the
-directory all the file names will be shown in ascending date order).
-
-You'd then overwrite `investor-report-latest.txt` with
-`investor-report-main.txt` and tell everyone to start working off of the
-newly updated `investor-report-latest.txt`.
-
-Before long, we might have a directory full of files like:
-
-```console
-investor-report-2019-1-01T1017.txt
-investor-report-2019-1-02T1123.txt
-investor-report-2019-1-04T4340.txt
-investor-report-2019-1-05T1017.txt
-investor-report-2019-1-08T2217.txt
-investor-report-2019-2-08T2317.txt
-investor-report-2019-2-09T0017.txt
-investor-report-2019-2-10T914.txt
-investor-report-2019-2-13T1017.txt
-investor-report-2019-2-15T1127.txt
-investor-report-2019-2-20T1237.txt
-investor-report-2019-2-21T1330.txt
-investor-report-2019-2-22T1545.txt
-investor-report-latest.txt
-investor-report-main.txt
-...
-```
-
-Wow! What a mess! And there are other messes waiting.
-
-What if Suman and Taylor both start work from the latest
-`investor-report-latest.txt` and Taylor makes changes to the same section Suman
-was working on. Taylor gets their work in first and that gets integrated by you.
-Now Suman's changes no longer apply. Suman is frustrated because their work will
-have to be re-done!
-
-## Reflection
-
-This is a pretty stressful bit of imagination. You've got to make sure that a
-report is as current as possible and absolutely, positively, correct. You might
-think this manager is a jerk or that these expectations are unreasonable. Maybe
-this could be possible with _one_ writer, not _four_.
-
-But the expectations that manager gave you for the report are **_the exact same
-expectations we have for code_**. It should be as good as possible, absolutely
-correct, and ready to ship to users at a moments' notice.
-
-The great news is that _all_ the manual work you had to do (and so much more!)
-can be done by a type of software called a _version control system (VCS)_. That
-is, software that _controls_ our collection of _versions_. The most popular VCS
-is called "Git." When we have a VCS on our side we can work confidently; we can
-even experiment without fear. Getting back to a "last known good state" is just
-a few key-clicks away. You're going to love writing code, text, letters,
-knowing a VCS is on your side!
+The great news is that _all_ of these situations can be managed by a type of
+software called a **version control system (VCS)**.
 
 ## Define the Purpose of a Version Control System
 
-"Version Control System (VCS)" describes a whole group of software. VCS
-software includes Git, Mercurial, Subversion, and others. Some other web-based
-applications like Google Docs have embraced the idea of "versions" and have
-added features like "tracked changes" or "view change history."
-
-The key benefit of version control is that you can experiment and **throw away
-bad ideas** and _instantly_ get back to your last-known "good" state.
-
-Think about it this way: when you were learning arithmetic, you knew the way to
-undo a bad calculation was to turn the pencil upside down and erase. As a result,
-you were **free** to try, experiment, and explore, knowing you could always
-easily get back to the original starting point. Because of this, most of us
-did our math homework in pencil, not ink!
-
-Because of the **freedom** that VCS provides, we can be **unafraid** to look
-at an ugly bit of code and _try_ something new. We can take a new technique a
-co-worker told us about and we can _try_ to replace our old code with this new idea.
-We can read about a new feature provided in a framework and _try_ it out in our
-old code. **VCS helps us be unafraid to try new and improved techniques**.
+**Version Control System (VCS)** describes a type of software that is designed
+specifically to help manage the complexities described above - and so much more!
+The key benefit of version control is that it keeps a complete history of the
+changes to the code, which makes it easy to "back up" to a working state if
+things go wrong. This gives you the freedom to experiment, throw away bad ideas,
+and instantly get back to your last-known "good" state if something breaks.
 
 > **ASIDE** The programmer, entrepreneur, and venture capitalist Paul Graham
 > notes that oil paints unlocked a revolution in experimentation in visual arts
@@ -133,67 +54,67 @@ old code. **VCS helps us be unafraid to try new and improved techniques**.
 >
 > Read more in his essay ["Hackers and Painters."][hp]
 
+There are several VCS's available, but the most popular — and the one you'll
+learn to use in this program — is called **Git**.
+
 ## Identify Benefits of Version Control Systems
 
-Beyond the advantage of being able to safely experiment, there are several
-_other_ benefits we get when we manage our work with Git:
+There are a number benefits we get when we use a VCS such as Git to manage our
+work:
 
 - Automatically create a backup of your work
-- Provide an easy way to undo mistakes and restore a previous version of your work
-- Document changes, including a log of what's changed with messages explaining
-  why it was changed
+- Provide an easy way to undo mistakes and restore a previous version of your
+  work
+- Document changes with a log that describes what's been changed and why
 - Keep file names and hierarchies consistent and organized
-- Branch work off into multiple "sandboxes" that can be experimented with but
-  won't impact each other
+- Branch work off into multiple "sandboxes" (called **branches** in Git) that
+  allow developers to experiment without impacting other branches
 - Collaborate with others without disturbing each other's or our own work
 
 And beyond these are even more advanced features that will help you optimize
-your workflow, once you become a whiz with the basics. If that feels daunting,
-it's OK. Most people learn a few patterns of Git and never learn more until they
-absolutely have to. Over years they build up a rich set of techniques, but it's
-rare to find someone who knows **everything** about Git. You don't need to
-memorize every command and optional flag to get some of its best benefits.
+your workflow once you've learned the basics. If that feels daunting, it's OK:
+you will build up your toolbox of techniques over time. In the meantime, though,
+you can get the best benefits of Git using a relatively small subset of all the
+techniques and commands it includes.
 
 ## Recognize Useful Git Vocabulary Terms
 
 We're about to get busy learning Git, but we first need to establish some common
 vocabulary. Git, perhaps more than any other software, has some special words
 that you'll hear a lot. Don't worry if you're not sure how some of these terms
-work in practice—that part will come later.
+work in practice — that part will come later.
 
-- **repository (or repo, for short)**: A directory of files that are _tracked_ by
-  Git.
-- **track**: When a file is _tracked_ by Git, it means that Git will notice any
-  changes to that file. We call these changes "differences" or "diffs". Git will
-  allow you to choose whether to _add_ the change, or "diff," in order to keep
-  it
-- **diff**: Short for "difference," the "diff" of a file is all the changes that
-  happened in it since the last _commit_. The "diff" of a repo is all the diffs
-  in all the _tracked_ files in the _repo_ that have been made, but which have
-  not yet been _committed_ (sometimes programmers call this "the diffset").
-- **commit**: When a diff is decided to be a good thing to save, we _commit_ the
-  diff to the repo's history using the `commit` command. When we make a commit
-  we are asked to write a "log" message which describes what happened in the
-  diff. Each commit also knows when it happened and what the repo's "diff" was.
-- **log**: The record of what happened in each commit
-- **local/remote**: When we start working with a git repo, we "clone" it from a
-  _remote_ source and have a copy of that directory on our own system. We call
-  the repo on our personal system the _local_ repo. (We'll talk more about the
-  "clone" command later.)
-- **default branch**: You'll learn in advanced Git that a repo can support
-  multiple branches (we called those "sandboxes" earlier). For the moment, just
-  remember this: by default, when you create a Git repo, you will be working on
-  the default branch. The name of this branch should be `main` (but may default
-  to `master`, depending on your configuration.)
-- **branch**: The combined history of all the changes of all the files in the
-  repo.
+- **repository** (or **repo**, for short): A directory of files that are
+  **tracked** by Git.
+- **track**: When a file is **tracked** by Git, it means that Git will notice
+  any changes to that file. We call these changes **differences** or **diffs**.
+  Git allows you to choose whether to **commit** a diff in order to keep it.
+- **diff**: The **diff** of a _file_ is all the changes that have been made to
+  it since the last **commit**. The **diff** of a _repo_ is all the diffs in all
+  the _tracked_ files in the repo that have not yet been committed (sometimes
+  programmers call this the **diffset**).
+- **commit**: Once we decide we want to save a diff, we **commit** the diff to
+  the repo's history using the `commit` command. When we make a commit, we write
+  a **log** message that describes what happened in the diff. The set of commits
+  provides a history of all of the changes that have been made to a repo and
+  when.
+- **log**: The record of what happened in each commit.
+- **local/remote**: When we start working with an existing Git repo, we
+  **clone** it from a **remote** source (on GitHub) and copy it to our machine.
+  We call the repo on our personal system the **local** repo.
+- **branch/default branch**: A Git repo can support multiple **branches** that
+  make it possible for multiple developers to be working on the code at the same
+  time. When you initialize a new Git repo, a **default branch** is created
+  where your work will be tracked by default. If you configured Git using the
+  instructions given earlier in the prework, the name of the branch will be
+  `main`, but you will also see older repos that use `master` as the default
+  branch.
 
 ## Conclusion
 
-If we are afraid to edit our code we won't remove complicated code that's hard
-to work with, try awesome new libraries, or take chances with fun new features.
-Version control helps us maintain the overall stability of our code so that we
-can feel free to explore.
+Git is one of the most valuable tools you will use as a developer. You will
+learn the basics of using Git in this section, and then will apply what you've
+learned when you create your project in the next section.
 
 ## Resources
 
