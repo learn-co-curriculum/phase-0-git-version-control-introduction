@@ -59,7 +59,7 @@ learn to use in this program — is called **Git**.
 
 ## Identify Benefits of Version Control Systems
 
-There are a number benefits we get when we use a VCS such as Git to manage our
+There are a number of benefits we get when we use a VCS such as Git to manage our
 work:
 
 - Automatically create a backup of your work
