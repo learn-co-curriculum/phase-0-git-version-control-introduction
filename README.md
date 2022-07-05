@@ -106,9 +106,9 @@ work in practice — that part will come later.
   make it possible for multiple developers to be working on the code at the same
   time. When you initialize a new Git repo, a **default branch** is created
   where your work will be tracked by default. If you configured Git using the
-  instructions given earlier in the prework, the name of the branch will be
-  `main`, but you will also see older repos that use `master` as the default
-  branch.
+  instructions given earlier in Software Engineering Prep, the name of the branch
+  will be `main`, but you will also see older repos that use `master` as the
+  default branch.
 
 ## Conclusion
 
