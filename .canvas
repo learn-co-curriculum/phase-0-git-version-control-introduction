@@ -1,9 +1,5 @@
 ---
 :lessons:
-- :id: 68358
-  :course_id: 3280
-  :canvas_url: https://learning.flatironschool.com/courses/3280/pages/intro-to-version-control
-  :type: page
 - :id: 233772
   :course_id: 6602
   :canvas_url: https://learning.flatironschool.com/courses/6602/pages/intro-to-version-control
